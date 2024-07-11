@@ -1,0 +1,33 @@
+.product-for-order-summary{
+    height: 80px;
+    display: flex;
+    background-color: #111a25;
+    justify-content: center;
+    align-items: center;
+}
+.product-for-order-summary>*{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'poppins';
+    color: white;
+    height: 80px;
+}
+.product-for-order-summary>h4{
+    color: rgb(228, 38, 117);
+}
+.product-for-order-summary img{
+    height: 60px;
+    width: 60px;
+    border-radius: 5px;
+}
+.product-for-order-summary:hover{
+    background-color: #343f4b;
+    border-bottom: 2px solid black;
+    border-top: 1px solid black;
+}
+.product-for-order-summary:hover>*{
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+}

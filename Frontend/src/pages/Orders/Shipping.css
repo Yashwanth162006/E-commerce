@@ -1,0 +1,59 @@
+.shipping-details-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #303e51;
+    width: 40%;
+    align-self: center;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+.shipping-details-container>h1{
+    color: white;
+    font-family: 'poppins';
+    font-weight: 400;
+    font-size: 1.5rem;
+    align-self: center;
+}
+.shipping-details-container p{
+    color: rgb(193, 191, 191);
+    font-family: 'poppins';
+    margin-bottom: 5px;
+    margin-left: 5%;
+    font-weight: 350;
+}
+.shipping-details-container>input{
+    height: 47px;
+    width: 90%;
+    align-self: center;
+    border-radius: 5px;
+    background-color: #455466;
+    color: white;
+    border: none;
+}
+
+.shipping-details-container>div{
+    display: flex;
+    gap: 10px;
+    color: rgb(193, 191, 191);
+    font-family: 'poppins';
+    margin-left: 4%;
+    margin-top: 10px;
+}
+.shipping-details-container button{
+    background-color: #e731a4;
+    color: white;
+    width: 90%;
+    margin-left: 5%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-family: 'poppins';
+    font-size: medium;
+    cursor: pointer;
+}
+.shipping-details-container button:hover{
+    background-color: #e01f80;
+}

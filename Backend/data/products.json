@@ -1,0 +1,147 @@
+[
+    {
+        "id": 1,
+        "src1": "https://media.istockphoto.com/id/173906029/photo/a-picture-of-a-black-digital-camera.jpg?s=612x612&w=0&k=20&c=exZ5V7BynGthow1uT1ljorYByx2KVmnRNgW5wSB0XWA=",
+        "name": "DSLR",
+        "brand": "Canon",
+        "description": "Best of Canon..",
+        "price": 159,
+        "stock": 5,
+        "quantity": 3,
+        "rating": 5,
+        "category": "Camera"
+    },
+    {
+        "id": 2,
+        "src1": "https://images-cdn.ubuy.co.in/63528f69b97a247dec01b8c2-navy-skechers-shoes-mens-memory-foam.jpg",
+        "name": "Sketchers",
+        "brand": "Sketchers",
+        "description": "From Sketchers..",
+        "price": 99,
+        "stock": 6,
+        "quantity": 4,
+        "rating": 4,
+        "category": "Shoes"
+    },
+    
+    {   
+        "id": 3,
+        "src1": "https://www.apple.com/newsroom/images/product/ipad/standard/apple_ipad-pro-spring21_hero_04202021_big.jpg.large.jpg",
+        "name": "Ipad",
+        "brand": "Apple",
+        "description": "Best Tablets Ever Made..",
+        "price": 543,
+        "stock": 6,
+        "quantity": 4,
+        "rating": 5,
+        "category": "Tablets"
+    },
+    {   
+        "id": 4,
+        "src1": "https://9to5mac.com/wp-content/uploads/sites/6/2021/10/MacBook-Pro-2021.jpg?quality=82&strip=all&w=1024",
+        "name": "Macbook Pro",
+        "brand": "Apple",
+        "description": "High Performance..",
+        "price": 890,
+        "stock": 9,
+        "quantity": 7,
+        "rating": 5,
+        "category": "Laptops"
+    },
+    {   
+        "id": 5,
+        "src1": "https://m.media-amazon.com/images/I/41dOILJpWGL._AC_.jpg",
+        "name": "Asus Vivobook",
+        "brand": "Asus",
+        "description": "OLED Display..",
+        "price": 670,
+        "stock": 8,
+        "quantity": 3,
+        "rating": 4,
+        "category": "Laptops"
+    },
+    {   
+        "id": 6,
+        "src1": "https://rukminim2.flixcart.com/image/850/1000/xif0q/shoe/c/g/z/-original-imagg7t3yuwguyw7.jpeg?q=90&crop=false",
+        "name": "Campus Shoe",
+        "brand": "Campus",
+        "description": "Indian Product..",
+        "price": 56,
+        "stock": 3,
+        "quantity": 7,
+        "rating": 5,
+        "category": "Shoes"
+    },
+    {   
+        "id": 7,
+        "src1": "https://5.imimg.com/data5/SELLER/Default/2022/7/WB/RP/XA/781643/dell-inspiron-5410-14-inches-fhd-touch-display-laptop.jpg",
+        "name": "Dell Inspiron touch",
+        "brand": "Dell",
+        "description": "2 in 1 Laptop..",
+        "price": 630,
+        "stock": 9,
+        "quantity": 7,
+        "rating": 3,
+        "category": "Laptops"
+    },
+    {   
+        "id": 8,
+        "src1": "https://blogs.icrc.org/law-and-policy/wp-content/uploads/sites/102/2022/03/Drone-image-1096x620.jpg",
+        "name": "Drone",
+        "brand": "Apple",
+        "description": "Quality Camera..",
+        "price": 237,
+        "stock": 8,
+        "quantity": 12,
+        "rating": 4,
+        "category": "Drones"
+    },
+    {   
+        "id": 9,
+        "src1": "https://i.pcmag.com/imagery/reviews/063U0wdojZxxDzYhU9PqPtx-1.fit_lim.size_1050x591.v1669065531.jpg",
+        "name": "Hp Pavilion",
+        "brand": "Hp",
+        "description": "Best of Hp..",
+        "price": 630,
+        "stock": 9,
+        "quantity": 7,
+        "rating": 5,
+        "category": "Laptops"
+    },
+    {   
+        "id": 10,
+        "src1": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202203/HP_Omen_16.jpg",
+        "name": "Omen 16",
+        "brand": "Hp",
+        "description": "Best Gaming Laptop..",
+        "price": 730,
+        "stock": 9,
+        "quantity": 7,
+        "rating": 5,
+        "category": "Laptops"
+    },
+    {   
+        "id": 11,
+        "src1": "https://rukminim2.flixcart.com/image/850/1000/xif0q/headphone/z/l/f/buds-pro-2-oneplus-original-imaghtn6pfhr9yya.jpeg?q=90&crop=false",
+        "name": "One Plus Earpods",
+        "brand": "One plus",
+        "description": "Good Earpods..",
+        "price": 86,
+        "stock": 9,
+        "quantity": 7,
+        "rating": 5,
+        "category": "Earpods"
+    },
+    {   
+        "id": 12,
+        "src1": "https://rukminim2.flixcart.com/image/850/1000/xif0q/headphone/z/l/f/buds-pro-2-oneplus-original-imaghtn6pfhr9yya.jpeg?q=90&crop=false",
+        "name": "One plus Mobile",
+        "brand": "One plus",
+        "description": "Nice Color..",
+        "price": 230,
+        "stock": 9,
+        "quantity": 7,
+        "rating": 4,
+        "category": "Mobiles"
+    }
+]

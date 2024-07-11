@@ -1,0 +1,27 @@
+.favourites-container{
+    width: calc(100% - 50px);
+    position: absolute;
+    top: 0;
+    left: 50px;
+    background-color: rgb(15,15,15);
+    height: 100vh;
+    overflow-y: scroll;
+    color: white;
+    font-family: 'poppins';
+    display: flex;
+    flex-direction: column;
+}
+.favourites-container>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #283445;
+    width: 80vw;
+    align-self: center;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+.favourites-container>div>div{
+    display: flex;
+    flex-wrap: wrap;
+}
