@@ -3,7 +3,7 @@ import Product_List from '../../All_Products'
 import ProductList from './ProductList'
 
 function createProduct(product){
-  return <ProductList id={product._id} src={product.src1} brand={product.brand} price={product.price} name={product.name} quantityChosen={product.quantity} quantity={product.quantity}/>
+  return <ProductList id={product._id} src={product.src1} brand={product.brand} price={product.price} name={product.name} quantityChosen={product.quantity} quantity={product.quantity} rating={product.rating}/>
 }
 const AllProducts = () => {
   return (

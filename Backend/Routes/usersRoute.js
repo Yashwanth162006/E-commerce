@@ -9,7 +9,7 @@ Router.route('/forgotPassword').post(authController.sendToken)
 Router.route('/resetPassword/').patch(authController.resetPassword)
 Router.route('/updatePassword').patch(authController.protect,authController.updatePassword)
 Router.route('/').get(authController.protect,authController.isAdmin,usersController.getAllUsers).post(usersController.createUser).patch(authController.protect,usersController.updateUser).delete(authController.protect,usersController.deleteUser)
-Router.route('/:id').get(usersController.getUserById)
+Router.route('/currentUser').get(authController.protect,usersController.getUserById)
 Router.route('/adminDelete').delete(authController.protect,authController.isAdmin,usersController.deleteUserByAdmin)
 
 module.exports = Router

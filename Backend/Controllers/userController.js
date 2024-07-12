@@ -17,11 +17,13 @@ exports.getAllUsers = async(req,res)=>{
     }
 }
 exports.getUserById = (req,res)=>{
+    const user = req.user
     try{
         res.status(200).json({
             status: 'success',
             data: {
-                user: 'user'
+                name: user.name,
+                email: user.email
             }
         })
     }catch(err){

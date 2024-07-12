@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import './Profile.css'
 import { ShopContext } from '../../contexts/ShopContext'
 import { toast } from 'react-toastify'
@@ -11,6 +11,14 @@ const Profile = () => {
   const {setIsLogedIn} = useContext(ShopContext)
   const {loginToken,setLoginToken} = useContext(ShopContext)
   const navigate = useNavigate()
+  useEffect(()=>{
+    fetch('http://127.0.0.1:3000/api/v1/users/currentUser',{
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${loginToken}`
+      }
+    }).then(response => response.text()).then(data => JSON.parse(data)).then(dataObj => setForm1(dataObj.data))
+  },[])
   function handleForm1(event){
     setForm1({...form1,
       [event.target.name]: event.target.value
@@ -93,12 +101,12 @@ const Profile = () => {
   }
   return (
     <div className='user-profile-container'>
-      <form className='user-profile' onChange={handleForm1} onSubmit={onSubmit1}>
+      <form className='user-profile' onSubmit={onSubmit1}>
         <h1>Update Profile</h1>
         <p>Name</p>
-        <input type='text' placeholder='Enter name' name='name'/>
+        <input type='text' placeholder='Enter name' name='name' value={form1.name} onChange={handleForm1}/>
         <p>Email Address</p>
-        <input type='email' placeholder='Enter email' name='email'/>
+        <input type='email' placeholder='Enter email' name='email' value={form1.email} onChange={handleForm1}/>
         <div>
             <button>Update</button>
           </div>

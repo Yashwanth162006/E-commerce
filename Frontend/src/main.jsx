@@ -41,6 +41,7 @@ import RelatedProducts from './pages/Products/RelatedProducts.jsx';
 import UserReviewContainer from './pages/Products/userReviewContainer.jsx';
 import AllReviews from './pages/Products/AllReviews.jsx'
 import ResetPassword from './pages/Auth/ResetPassword.jsx'
+import TopProducts from './pages/Admin/TopProducts.jsx'
 function createProductCarousel(product){
   const path = 'productCarousel'+product._id;
   return <Route path={path} element={<ProductCarousel src1={product.src1} src2={product.src2} src3={product.src3} title={product.name} price={product.price} description={product.description} brand={product.brand} rating={product.rating} quantity={product.quantity} stock={product.stock} id={product._id}/>}/>
@@ -76,6 +77,7 @@ const router = createBrowserRouter(
         <Route path="allproductslist" element={<AllProducts />} />
         <Route path="productlist/:pageNumber" element={<ProductList />} />
         <Route path="product/update/:_id" element={<ProductUpdate />} />
+        <Route path='top-5' element={<TopProducts />}/>
         <Route path="orderlist" element={<OrderList />} />
         <Route path="" element={<AdminDashboard />} />
       </Route>
