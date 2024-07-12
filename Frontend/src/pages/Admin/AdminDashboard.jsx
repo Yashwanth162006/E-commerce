@@ -8,6 +8,7 @@ const AdminDashboard = () => {
       <NavLink to='allproductslist' className='button'>All products</NavLink>
       <NavLink to='userlist' className='button'>Users</NavLink>
       <NavLink to='top-5' className='button'>Top Products</NavLink>
+      <NavLink to='addproduct' className='button'>Add Product</NavLink>
       <NavLink to='orderlist' className='button'>Orders</NavLink>
       <NavLink to='categorylist' className='button'>Categories</NavLink>
     </div>

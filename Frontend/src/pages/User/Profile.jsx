@@ -97,7 +97,7 @@ const Profile = () => {
     }
   }
   function navigateToMyOrders(){
-    
+    navigate('/myOrders')
   }
   return (
     <div className='user-profile-container'>

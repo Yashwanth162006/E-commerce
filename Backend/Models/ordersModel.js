@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const orderSchema = new mongoose.Schema({
     refToProducts: {
-        type: [mongoose.Schema.ObjectId],
+        type: [{productId: mongoose.Schema.ObjectId,qty: Number}],
         ref: 'Product',
         required: [true,'An order cannot be empty']
     },
@@ -14,6 +14,15 @@ const orderSchema = new mongoose.Schema({
     dateOfOrder: {
         type: Date,
         default: Date.now()
+    },
+    address: {
+        type: {
+            address: String,
+            city: String,
+            postalCode: String,
+            country: String
+        },
+        required: [true,'An order must have a delivery address']
     }
 })
 

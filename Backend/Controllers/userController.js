@@ -33,6 +33,21 @@ exports.getUserById = (req,res)=>{
         })
     }
 }
+exports.getUserForAdmin = async(req,res)=>{
+    try{
+        const user = await User.findOne({_id: req.params.id})
+        res.status(200).json({
+            status: 'success',
+            name: user.name
+        })
+    }catch(err){
+        console.log(err)
+        res.status(404).json({
+            status: 'fail',
+            message: 'error while fetching data'
+        })
+    }
+}
 exports.createUser = (req,res)=>{
     try{
         res.status(200).json({
@@ -115,6 +130,19 @@ exports.deleteUserByAdmin = async (req,res)=>{
         res.status(404).json({
             status: 'fail',
             message: 'Error in deleting !!'
+        })
+    }
+}
+exports.getUserId = async(req,res)=>{
+    try{
+        res.status(200).json({
+            status: 'success',
+            userId: req.user._id
+        })
+    }catch(err){
+        res.status(404).json({
+            status: 'fail',
+            message: 'failed to fetch user id'
         })
     }
 }

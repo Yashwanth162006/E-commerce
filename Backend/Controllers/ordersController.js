@@ -22,6 +22,7 @@ exports.currentOrder = async(req,res)=>{
         //Finding out the userId
         const userId = req.user._id
         //Placing the order
+        console.log(req.body)
         const order = await Order.create({...req.body,refToUser: userId})
         //sending the response
         res.status(200).json({
@@ -35,6 +36,23 @@ exports.currentOrder = async(req,res)=>{
         res.status(404).json({
             status: 'fail',
             message: 'Order not placed'
+        })
+    }
+}
+exports.getAllOrders = async(req,res)=>{
+    try{
+        const orders = await Order.find()
+        res.status(200).json({
+            status: 'success',
+            data: {
+                orders: orders
+            }
+        })
+    }catch(err){
+        console.log(err)
+        res.status(404).json({
+            status: 'fail',
+            message: 'Failed to fetch the orders'
         })
     }
 }

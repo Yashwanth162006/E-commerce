@@ -38,21 +38,20 @@ function getDefaultFavourites(){
 }
   return fav;
 }
-
 function ShopContextProvider(props){
     const [selectedProduct, setSelectedProduct] = useState(loadFromLocalStorage('selectedProduct',null));
-    const [cartItems, setCartItems] = useState(loadFromLocalStorage('cartItems',getDefaultCart()));
-    const [favouriteItems,setFavouriteItems] = useState(loadFromLocalStorage('favItems',getDefaultFavourites()));
-    const [shippingAddress,setShippingAddress] = useState(null);
+    const [cartItems, setCartItems] = useState(loadFromLocalStorage('ctItems',getDefaultCart()));
+    const [favouriteItems,setFavouriteItems] = useState(loadFromLocalStorage('favoItems',getDefaultFavourites()));
     const [isLogedIn,setIsLogedIn] = useState(loadFromLocalStorage('loginState',0));
     const [loginToken,setLoginToken] = useState(loadFromLocalStorage('loginToken',null));
     const [userName,setUserName] = useState(loadFromLocalStorage('userName',null));
     const [isAdmin,setIsAdmin] = useState(loadFromLocalStorage('adminState',false))
+    const [addr,setAddr] = useState(loadFromLocalStorage('addr',['0','1','2','3']))
     useEffect(()=>{
-      saveToLocalStorage('cartItems',cartItems);
+      saveToLocalStorage('ctItems',cartItems);
     },[cartItems])
     useEffect(()=>{
-      saveToLocalStorage('favItems',favouriteItems)
+      saveToLocalStorage('favoItems',favouriteItems)
     },[favouriteItems])
     useEffect(()=>{
         saveToLocalStorage('selectedProduct',selectedProduct);
@@ -69,6 +68,9 @@ function ShopContextProvider(props){
       useEffect(()=>{
         saveToLocalStorage('adminState',isAdmin)
       },[isAdmin])
+      useEffect(()=>{
+        saveToLocalStorage('addr',addr)
+      },[addr])
     function addToCart(_id,qty){
         let items = [...cartItems];
         items.find(product => product.productId === _id).qty = qty
@@ -93,7 +95,7 @@ function ShopContextProvider(props){
     function clearCart(){
       setCartItems(getDefaultCart());
     }
-    const contextValue = {Product_List,selectedProduct,setSelectedProduct,cartItems,setCartItems,favouriteItems,setFavouriteItems,addToCart,removeFromCart,addToFavourites,removeFromFavourites,shippingAddress,setShippingAddress,isLogedIn,setIsLogedIn,clearCart,loginToken,setLoginToken,userName,setUserName,isAdmin,setIsAdmin};
+    const contextValue = {Product_List,selectedProduct,setSelectedProduct,cartItems,setCartItems,favouriteItems,setFavouriteItems,addToCart,removeFromCart,addToFavourites,removeFromFavourites,isLogedIn,setIsLogedIn,clearCart,loginToken,setLoginToken,userName,setUserName,isAdmin,setIsAdmin,addr,setAddr};
     return <ShopContext.Provider value={contextValue}>
         {props.children}
     </ShopContext.Provider>
