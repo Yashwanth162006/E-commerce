@@ -1,0 +1,19 @@
+.category-list-container{
+    background-color: #1e2835;
+    width: 50%;
+    border-radius: 10px;
+}
+.category-name{
+    color: white;
+    font-family: 'poppins';
+    margin-left: 10px;
+}
+.category-name>h3{
+    font-weight: 400;
+}
+.category-list-container>h2{
+    font-family: 'poppins';
+    text-align: center;
+    font-weight: 450;
+    color: rgb(240, 76, 120);
+}
