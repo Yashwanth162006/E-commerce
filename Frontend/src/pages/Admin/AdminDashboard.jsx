@@ -11,6 +11,7 @@ const AdminDashboard = () => {
       <NavLink to='addproduct' className='button'>Add Product</NavLink>
       <NavLink to='orderlist' className='button'>Orders</NavLink>
       <NavLink to='categorylist' className='button'>Categories</NavLink>
+      <NavLink to='brandList' className='button'>Brands</NavLink>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import ProductTabs from './Products/ProductTabs'
 import DSLR_1 from '../Images/DSLR/DSLR-1.png'
 import Product_List from '../All_Products.js';
 import { NavLink } from 'react-router-dom';
+import { ShopContext } from '../contexts/ShopContext.jsx';
 
 
 const Shop = () => {
@@ -10,10 +11,34 @@ const Shop = () => {
   const [categoryFilteredList,setCategoryFilteredList] = useState(Product_List);
   const [displayList,setDisplayList] = useState(Product_List);
   const [categoryList,setCategoryList] = useState([]);
-  const allBrands = ['Apple','Dell','Sketchers','Canon','One plus','Hp','Campus'];
-  const [brandList,setBrandList] = useState(allBrands);
+  const [allBrands,setAllBrands] = useState([])
+  const [brandList,setBrandList] = useState([]);
   const [inputValue,setInputValue] = useState("");
-
+  const [allCategories,setAllCategories] = useState([])
+  const {loginToken} = useContext(ShopContext)
+  useEffect(()=>{
+    fetch('http://127.0.0.1:3000/api/v1/categories/',{
+      method: "GET",
+      headers: {
+        'Authorization': `Bearer ${loginToken}`
+      }
+    }).then(response => response.text())
+    .then(data => JSON.parse(data))
+    .then(dataObj => setAllCategories(dataObj.categoryList))
+  },[])
+  useEffect(()=>{
+    fetch('http://127.0.0.1:3000/api/v1/brands/',{
+      method: "GET",
+      headers: {
+        'Authorization': `Bearer ${loginToken}`
+      }
+    }).then(response => response.text())
+    .then(data => JSON.parse(data))
+    .then(dataObj => {
+      setAllBrands(dataObj.brandList)
+      setBrandList(dataObj.brandList)
+  })
+  },[])
   useEffect(() => {
     brandOptions();
   }, [categoryFilteredList]);
@@ -26,7 +51,9 @@ const Shop = () => {
       setDisplayList(filteredByPrice);
     }
   }, [inputValue,categoryFilteredList]);
-
+  function createCategory(category){
+    return <div><input type='checkbox' value={category.category} onClick={handleInputChange}/> {category.category}</div>
+  }
   function createProduct(product){
     return <ProductTabs src1={product.src1} brand={product.brand} name={product.name} description={product.description} price={product.price} id={product._id}/>
   }
@@ -67,7 +94,7 @@ const Shop = () => {
     setDisplayList(categoryFilteredList.filter((product)=>product.brand === currBrand))
   }
   function createOption(brand){
-    return <div><input type='radio' value={brand} name="brand-filter" id={brand} onClick={handleBrandFilter}/> <label for={brand}>{brand}</label></div>
+    return <div><input type='radio' value={brand.brand} name="brand-filter" id={brand.brand} onClick={handleBrandFilter}/> <label for={brand.brand}>{brand.brand}</label></div>
   }
   function handlePriceChange(event){
       setInputValue(event.target.value);
@@ -81,13 +108,7 @@ const Shop = () => {
           </div>
           <div className='filter-options'>
             <form>
-              <div><input type='checkbox' value='Tablets' onClick={handleInputChange}/> Tablets</div>
-              <div><input type='checkbox' value='Laptops' onClick={handleInputChange}/> Laptops</div>
-              <div><input type='checkbox' value='Camera' onClick={handleInputChange}/> Camera</div>
-              <div><input type='checkbox' value='Shoes' onClick={handleInputChange}/> Shoes</div>
-              <div><input type='checkbox' value='Mobiles' onClick={handleInputChange}/> Mobiles</div>
-              <div><input type='checkbox' value='Drones' onClick={handleInputChange}/> Drones</div>
-              <div><input type='checkbox' value='Earpods' onClick={handleInputChange}/> Earpods</div>
+              {allCategories.map(createCategory)}
             </form>
           </div>
         </div>

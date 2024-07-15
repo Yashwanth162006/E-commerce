@@ -40,7 +40,7 @@ function getDefaultFavourites(){
 }
 function ShopContextProvider(props){
     const [selectedProduct, setSelectedProduct] = useState(loadFromLocalStorage('selectedProduct',null));
-    const [cartItems, setCartItems] = useState(loadFromLocalStorage('ctItems',getDefaultCart()));
+    const [cartItems, setCartItems] = useState(loadFromLocalStorage('crItems',getDefaultCart()));
     const [favouriteItems,setFavouriteItems] = useState(loadFromLocalStorage('favoItems',getDefaultFavourites()));
     const [isLogedIn,setIsLogedIn] = useState(loadFromLocalStorage('loginState',0));
     const [loginToken,setLoginToken] = useState(loadFromLocalStorage('loginToken',null));
@@ -48,7 +48,7 @@ function ShopContextProvider(props){
     const [isAdmin,setIsAdmin] = useState(loadFromLocalStorage('adminState',false))
     const [addr,setAddr] = useState(loadFromLocalStorage('addr',['0','1','2','3']))
     useEffect(()=>{
-      saveToLocalStorage('ctItems',cartItems);
+      saveToLocalStorage('crItems',cartItems);
     },[cartItems])
     useEffect(()=>{
       saveToLocalStorage('favoItems',favouriteItems)

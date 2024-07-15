@@ -1,4 +1,4 @@
-import React,{useState,useContext} from 'react'
+import React,{useState,useContext,useEffect} from 'react'
 import SmallProduct from './Products/SmallProduct'
 import DSLR_1 from '../Images/DSLR/DSLR-1.png'
 import Product_List from '../All_Products'
@@ -16,10 +16,12 @@ const Cart = () => {
   }
   function priceCalculator(cartItems){
     let p = 0;
-    cartItems
+    console.log(cartItems)
     for(let i=0;i<cartItems.length;i++){
       const product = Product_List.find(product => product._id === cartItems[i].productId)
-      p = p + (cartItems[i].qty)*(product.price)
+      if(cartItems[i].qty){
+        p = p + (cartItems[i].qty)*(product.price)
+      }
     }
     return p;
   }
@@ -35,6 +37,7 @@ const Cart = () => {
         <div className='shopping-cart'>
           <div className='products-in-cart'>
             < p>Shopping Cart</p>
+            {console.log(cartItems)}
             {itemCalculator(cartItems)===0?<div className='Empty-Cart'><p>Your cart is empty. <NavLink to='/shop' className='cart-to-shop-link'> Go to Shop</NavLink></p></div>:<div className='cart-products-div'>
               {cartItems.map(createCartItem)}
             </div>}

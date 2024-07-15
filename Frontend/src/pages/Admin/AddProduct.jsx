@@ -33,7 +33,19 @@ const AddProduct = () => {
     let ctItems = [...cartItems]
     ctItems.push({productId: dataObj.productId,qty: 0})
     setCartItems(ctItems)
+    fetch('http://127.0.0.1:3000/api/v1/categories/',{
+      method: 'POST',
+      body: JSON.stringify({category: form.category}),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${loginToken}`
+      }
+    })
     toast(dataObj.message)
+    setTimeout(()=>{
+      navigate('/shop')
+      location.reload()
+    },3000)
   }
   return (
     <div className='product-update-container'>

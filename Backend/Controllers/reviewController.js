@@ -17,12 +17,48 @@ exports.getProductReviews = async(req,res)=>{
         })
     }
 }
+exports.getProductReviewByUser = async(req,res)=>{
+    try{
+        const productReview = await Review.find({refToProduct: req.params.productId,refToUser: req.user._id})
+        res.status(200).json({
+            status: 'success',
+            data:{
+                review: productReview
+            }
+        })
+    }catch(err){
+        res.status(404).json({
+            status: 'fail',
+            message: 'Could not fetch you the review'
+        })
+    }
+}
+exports.doesReviewExists = async(req,res,next)=>{
+    try{
+        if(await Review.findOne({refToProduct: req.params.productId,refToUser: req.user._id})){
+            return res.status(200).json({
+                status: 'fail',
+                message: 'Can write only one review'
+            })
+        }
+        res.status(200).json({
+            status: 'success',
+            message: 'No review'
+        })
+    }catch(err){
+        console.log(err)
+        res.status(404).json({
+            status: 'fail',
+            message: 'failed to write the review'
+        })
+    }
+}
 exports.writeProductReview = async(req,res)=>{
     try{
         if(await Review.findOne({refToProduct: req.params.productId,refToUser: req.user._id})){
             return res.status(401).json({
                 status: 'fail',
-                message: 'A user can write only one review you can update your previuos review'
+                message: 'Can write only one review'
             })
         }
         const userId = req.user._id
@@ -36,7 +72,7 @@ exports.writeProductReview = async(req,res)=>{
     }catch(err){
         res.status(404).json({
             status: 'fail',
-            message: err
+            message: 'Failed to write the review'
         })
     }
 }

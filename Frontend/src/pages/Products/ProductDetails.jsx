@@ -39,7 +39,6 @@ const ProductDetails = () => {
       <NavLink to='/'><button className='button'><i class="fa-solid fa-arrow-left"></i>Go Back</button></NavLink>
       <div className='product-details-product'>
         <div className='product-details-product-left'>
-          {console.log(_id)}
           <img src={product.src1}/>
             {favouriteItems.find(item => item.productId === _id).fav?<i class='fa-solid fa-heart' onClick={toggleFromFavourites}></i>:<i class='fa-regular fa-heart' onClick={toggleFromFavourites}></i>}
         </div>

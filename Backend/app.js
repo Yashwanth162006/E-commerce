@@ -6,6 +6,7 @@ const usersRoute = require('./Routes/usersRoute')
 const reviewRoute = require('./Routes/reviewRoute')
 const orderRoute = require('./Routes/orderRoute')
 const categoryRoute = require('./Routes/categoryRoute')
+const brandRoute = require('./Routes/brandRoute')
 
 const app = express()
 app.use(cors())
@@ -20,4 +21,5 @@ app.use('/api/v1/users',usersRoute)
 app.use('/api/v1/reviews',reviewRoute)
 app.use('/api/v1/orders',orderRoute)
 app.use('/api/v1/categories',categoryRoute)
+app.use('/api/v1/brands',brandRoute)
 module.exports = app
