@@ -20,7 +20,7 @@ const ProductList = (props) => {
   async function deleteProduct(){
     const confirmation = confirm('Do you want to delete this product?')
     if(confirmation){
-      const response = await fetch(`http://127.0.0.1:3000/api/v1/products/${props.id}`,{
+      const response = await fetch(`https://e-com-backend-4zqj.onrender.com/api/v1/products/${props.id}`,{
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${loginToken}`
