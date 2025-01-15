@@ -15,7 +15,7 @@ function ResetPassword(){
     }
     async function handleSubmit(event){
         event.preventDefault()
-        const response = await fetch('http://127.0.0.1:3000/api/v1/users/resetPassword',{
+        const response = await fetch('https://e-com-backend-4zqj.onrender.com/api/v1/users/resetPassword',{
             method: 'PATCH',
             body: JSON.stringify(form),
             headers: {
