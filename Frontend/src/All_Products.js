@@ -1,6 +1,6 @@
 
 async function importProducts(){
-    const response = await fetch('http://127.0.0.1:3000/api/v1/products',{
+    const response = await fetch('https://e-com-backend-4zqj.onrender.com/',{
         method: 'GET'
     })
     const data = await response.text()
