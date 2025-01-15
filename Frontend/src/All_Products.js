@@ -1,6 +1,6 @@
 
 async function importProducts(){
-    const response = await fetch('https://e-com-backend-4zqj.onrender.com/',{
+    const response = await fetch('https://e-com-backend-4zqj.onrender.com/api/v1/products',{
         method: 'GET'
     })
     const data = await response.text()
