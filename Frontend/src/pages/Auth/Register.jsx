@@ -18,7 +18,7 @@ const Register = () => {
   }
   async function handleSubmit(event){
     event.preventDefault()
-    const response = await fetch('http://127.0.0.1:3000/api/v1/users/signup',{
+    const response = await fetch('https://e-com-backend-4zqj.onrender.com/api/v1/users/signup',{
       method: 'POST',
       body: JSON.stringify(form),
       headers: {
