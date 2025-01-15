@@ -11,7 +11,7 @@ const UserList = () => {
       id: id
     }
     if(confirmation){
-      const response = await fetch('http://127.0.0.1:3000/api/v1/users/adminDelete',{
+      const response = await fetch('https://e-com-backend-4zqj.onrender.com/api/v1/users/adminDelete',{
         method: 'DELETE',
         body: JSON.stringify(obj),
         headers: {
