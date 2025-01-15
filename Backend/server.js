@@ -8,7 +8,7 @@ mongoose.connect(DB).then(()=>{
     console.log('Database connected')
 })
 
-const port = process.env.PORT
-app.listen(port,'127.0.0.1',()=>{
+const port = process.env.PORT || 4000
+app.listen(port,()=>{
     console.log(`listening to requests on port ${port}`)
 })
