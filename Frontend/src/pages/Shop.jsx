@@ -17,7 +17,7 @@ const Shop = () => {
   const [allCategories,setAllCategories] = useState([])
   const {loginToken} = useContext(ShopContext)
   useEffect(()=>{
-    fetch('http://127.0.0.1:3000/api/v1/categories/',{
+    fetch('https://e-com-backend-4zqj.onrender.com/api/v1/categories/',{
       method: "GET",
       headers: {
         'Authorization': `Bearer ${loginToken}`
@@ -27,7 +27,7 @@ const Shop = () => {
     .then(dataObj => setAllCategories(dataObj.categoryList))
   },[])
   useEffect(()=>{
-    fetch('http://127.0.0.1:3000/api/v1/brands/',{
+    fetch('https://e-com-backend-4zqj.onrender.com/api/v1/brands/',{
       method: "GET",
       headers: {
         'Authorization': `Bearer ${loginToken}`
