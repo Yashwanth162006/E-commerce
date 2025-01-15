@@ -1,0 +1,38 @@
+.progress-tracker-container{
+    width: calc(100% - 50px);
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0;
+}
+.progress-tracker{
+    display: flex;
+    align-items: center;
+}
+.progress-tracker>progress{
+    position: relative;
+    bottom: 10px;
+    border-radius: 0;
+    height: 5px;
+    width: 55px;
+}
+.progress-element{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.progress-element>button{
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    border: none;
+}
+.progress-element>p{
+    margin: 0;
+    font-family: 'poppins';
+    color: white;
+    font-size: small;
+    font-weight: 400 ;
+}

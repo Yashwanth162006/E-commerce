@@ -1,0 +1,16 @@
+const express = require('express')
+const Router = express.Router()
+const usersController = require('../Controllers/userController')
+const authController = require('../Controllers/authController')
+
+Router.route('/signup').post(authController.signup)
+Router.route('/login').post(authController.login)
+Router.route('/forgotPassword').post(authController.sendToken)
+Router.route('/resetPassword/').patch(authController.resetPassword)
+Router.route('/updatePassword').patch(authController.protect,authController.updatePassword)
+Router.route('/').get(authController.protect,authController.isAdmin,usersController.getAllUsers).post(usersController.createUser).patch(authController.protect,usersController.updateUser).delete(authController.protect,usersController.deleteUser)
+Router.route('/currentUser').get(authController.protect,usersController.getUserById)
+Router.route('/adminDelete').delete(authController.protect,authController.isAdmin,usersController.deleteUserByAdmin)
+Router.route('/getUserByAdmin/:id').get(authController.protect,usersController.getUserForAdmin)
+Router.route('/getUserId').get(authController.protect,usersController.getUserId)
+module.exports = Router

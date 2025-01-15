@@ -1,0 +1,37 @@
+.user-review{
+    background-color: #334356;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    height: 90px;
+    border-radius: 7px;
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+.review-info{
+    margin-left: 10px;
+}
+.review-info>p{
+    margin: 0;
+}
+.review-info>.user-review-rating{
+    font-size: smaller;
+}
+.review-edit-options{
+    display: flex;
+    margin-right: 20px;
+    gap:15px;
+}
+.review-edit-options>.fa-trash-can{
+    color: rgb(212, 53, 53);
+    cursor: pointer
+}
+.review-edit-options>.fa-pen-to-square{
+    cursor: pointer;
+}
+.reviewer-name{
+    margin-right: 30px;
+}

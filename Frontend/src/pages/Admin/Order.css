@@ -1,0 +1,7 @@
+.all-the-orders{
+    width: 90%;
+    overflow-y: scroll;
+}
+.all-the-orders::-webkit-scrollbar{
+    display: none;
+}
