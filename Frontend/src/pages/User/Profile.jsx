@@ -12,7 +12,7 @@ const Profile = () => {
   const {loginToken,setLoginToken} = useContext(ShopContext)
   const navigate = useNavigate()
   useEffect(()=>{
-    fetch('http://127.0.0.1:3000/api/v1/users/currentUser',{
+    fetch('https://e-com-backend-4zqj.onrender.com/api/v1/users/currentUser',{
       method: 'GET',
       headers: {
         Authorization: `Bearer ${loginToken}`
@@ -48,7 +48,7 @@ const Profile = () => {
     }
     setForm1(tempForm1)
     console.log(form1)
-    const response = await fetch('http://127.0.0.1:3000/api/v1/users/',{
+    const response = await fetch('https://e-com-backend-4zqj.onrender.com/api/v1/users/',{
       method: 'PATCH',
       body: JSON.stringify(form1),
       headers: {
@@ -62,7 +62,7 @@ const Profile = () => {
   }
   async function onSubmit2(event){
     event.preventDefault()
-    const response = await fetch('http://127.0.0.1:3000/api/v1/users/updatePassword',{
+    const response = await fetch('https://e-com-backend-4zqj.onrender.com/api/v1/users/updatePassword',{
       method: 'PATCH',
       body: JSON.stringify(form2),
       headers: {
@@ -80,7 +80,7 @@ const Profile = () => {
   }
   async function onSubmit3(event){
     event.preventDefault()
-    const response = await fetch('http://127.0.0.1:3000/api/v1/users/',{
+    const response = await fetch('https://e-com-backend-4zqj.onrender.com/api/v1/users/',{
       method: 'DELETE',
       body: JSON.stringify(form3),
       headers: {
