@@ -29,7 +29,7 @@ const ProductUpdate = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const response = await fetch(`http://127.0.0.1:3000/api/v1/products/${_id}`,{
+    const response = await fetch(`https://e-com-backend-4zqj.onrender.com/api/v1/products/${_id}`,{
       method: 'PATCH',
       body: JSON.stringify(form),
       headers: {
@@ -47,7 +47,7 @@ const ProductUpdate = () => {
     }
   }
   useEffect(()=>{
-    fetch(`http://127.0.0.1:3000/api/v1/products/${_id}`,{
+    fetch(`https://e-com-backend-4zqj.onrender.com/api/v1/products/${_id}`,{
       method: 'GET'
     }).then(response => response.text()).then(data => JSON.parse(data)).then(dataObj => setForm(dataObj.product))
   },[])
