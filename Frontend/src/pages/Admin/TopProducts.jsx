@@ -8,7 +8,7 @@ function createProduct(product){
 const AllProducts = () => {
     const [productList,setProductList] = useState([])
     useEffect(()=>{
-        fetch('http://127.0.0.1:3000/api/v1/products/top-5')
+        fetch('https://e-com-backend-4zqj.onrender.com/api/v1/products/top-5')
         .then(response => response.text())
         .then(data => JSON.parse(data))
         .then(dataObj => {
