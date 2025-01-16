@@ -17,7 +17,7 @@ const AddProduct = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log(form)
-    const response = await fetch(`http://127.0.0.1:3000/api/v1/products/`,{
+    const response = await fetch(`https://e-com-backend-4zqj.onrender.com/api/v1/products/`,{
       method: 'POST',
       body: JSON.stringify(form),
       headers: {
