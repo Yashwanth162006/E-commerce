@@ -32,7 +32,7 @@ const PlaceOrder = () => {
       refToProducts.push(cartItems[i])
     }
     const address = {address: addr[0],city: addr[1],postalCode: addr[2],country: addr[3]}
-    const response1 = await fetch('http://127.0.0.1:3000/api/v1/orders/user',{
+    const response1 = await fetch('https://e-com-backend-4zqj.onrender.com/api/v1/orders/user',{
       method: 'POST',
       body: JSON.stringify({refToProducts: refToProducts,address: address}),
       headers: {
