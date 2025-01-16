@@ -38,7 +38,7 @@ const UserList = () => {
     </div>
   }
   useEffect(()=>{
-    fetch('http://127.0.0.1:3000/api/v1/users/',{
+    fetch('https://e-com-backend-4zqj.onrender.com/api/v1/users/',{
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${loginToken}`
