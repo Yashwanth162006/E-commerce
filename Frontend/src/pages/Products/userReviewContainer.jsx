@@ -15,7 +15,7 @@ function userReviewContainer(){
         })
     }
     useEffect(()=>{
-        fetch(`http://127.0.0.1:3000/api/v1/reviews/exists/${_id}`,{
+        fetch(`https://e-com-backend-4zqj.onrender.com/api/v1/reviews/exists/${_id}`,{
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${loginToken}`
@@ -30,7 +30,7 @@ function userReviewContainer(){
     },[])
     async function handleSubmit(event){
         event.preventDefault()
-        const response = await fetch(`http://127.0.0.1:3000/api/v1/reviews/${_id}`,{
+        const response = await fetch(`https://e-com-backend-4zqj.onrender.com/api/v1/reviews/${_id}`,{
             method: 'POST',
             body: JSON.stringify(form),
             headers: {
@@ -48,7 +48,7 @@ function userReviewContainer(){
         }
     }
     useEffect(()=>{
-        fetch(`http://127.0.0.1:3000/api/v1/reviews/userReview/${_id}`,{
+        fetch(`https://e-com-backend-4zqj.onrender.com/api/v1/reviews/userReview/${_id}`,{
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${loginToken}`
